@@ -14,7 +14,6 @@ public class NetworkManagerServer : NetworkManager
     public event CliendDataEventHandler onClientData;
 
     private List<int> connections = new List<int>();
-    public GameController gameController;
 
     public void StartupServer()
     {
