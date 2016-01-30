@@ -17,6 +17,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         index = parent.GetChildIndex(this);
         parent.RemoveChild(this);
+        index = parent.GetChildIndex(this);
     }
 
     public void OnDrag(PointerEventData eventData)
