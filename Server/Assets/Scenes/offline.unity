@@ -194,6 +194,7 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   matchName: default
   matchSize: 4
+  gameController: {fileID: 0}
 --- !u!1 &76757998
 GameObject:
   m_ObjectHideFlags: 0

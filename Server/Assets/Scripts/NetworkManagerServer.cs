@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class NetworkManagerServer : NetworkManager
 {
+    public delegate void ClientConnectEventHandler( int connectionId );
+    public delegate void ClientDisconnectEventHandler( int connectionId );
+    public delegate void CliendDataEventHandler( PlayerHandMessage message );
+    public event ClientConnectEventHandler onClientConnected;
+    public event ClientDisconnectEventHandler onClientDisconnected;
+    public event CliendDataEventHandler onClientData;
+
     private List<int> connections = new List<int>();
+    public GameController gameController;
 
     public void StartupServer()
     {
@@ -33,6 +41,18 @@ public class NetworkManagerServer : NetworkManager
         SceneManager.LoadScene("offline");
     }
 
+    public override void OnServerConnect( NetworkConnection conn )
+    {
+        base.OnServerConnect( conn );
+        if( onClientConnected != null ) onClientConnected( conn.connectionId );
+    }
+
+    public override void OnServerDisconnect( NetworkConnection conn )
+    {
+        base.OnServerDisconnect( conn );
+        if( onClientDisconnected != null ) onClientDisconnected( conn.connectionId );
+    }
+
     void SetPort()
     {
         networkPort = 7777;
@@ -41,7 +61,8 @@ public class NetworkManagerServer : NetworkManager
     void OnServerReadyToBeginMessage(NetworkMessage netMsg)
     {
         var beginMessage = netMsg.ReadMessage<PlayerHandMessage>();
-        Debug.Log("Message from connection " + beginMessage.connectionId);
+        if( onClientData != null ) onClientData( beginMessage );
+        //Debug.Log("Message from connection " + beginMessage.connectionId);
     }
 
     public class PlayerHandMessage : MessageBase
