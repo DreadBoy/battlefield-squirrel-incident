@@ -8,13 +8,15 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public CardType type;
     
     public CardPanel parent;
-    public int index = -1;
+    public CardPanel target;
+    public int index = 0;
+    public int indexTarget = 0;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        index = parent.GetChildIndex(this);
         parent.RemoveChild(this);
-        index = parent.GetChildIndex();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -25,9 +27,20 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        if(!transform.parent.GetComponent<CardPanel>())
+        //sem jo izpustil nekje vmes med paneli, daj jo kar nazaj na izhodišče
+        if(target == null)
         {
-            parent.AddChild(this);
+            parent.AddChild(this, index);
+        }
+        //dodam ga nazaj v isti panel
+        else if(parent == target)
+        {
+            parent.AddChild(this, indexTarget);
+        }
+        //dodam ga v grugi panel
+        else
+        {
+            target.AddChild(this, indexTarget);
         }
     }
 }
