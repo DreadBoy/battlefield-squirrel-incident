@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class NetworkManagerServer : NetworkManager
 {
@@ -20,6 +21,17 @@ public class NetworkManagerServer : NetworkManager
         StopServer(); //Unity method
     }
 
+    public override void OnStartServer()
+    {
+        base.OnStartServer();
+        SceneManager.LoadScene("online");
+    }
+
+    public override void OnStopServer()
+    {
+        base.OnStopServer();
+        SceneManager.LoadScene("offline");
+    }
 
     void SetPort()
     {

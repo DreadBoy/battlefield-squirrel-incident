@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CardPanel : MonoBehaviour, IDropHandler
 {
@@ -51,6 +52,11 @@ public class CardPanel : MonoBehaviour, IDropHandler
         card.gameObject.GetComponent<Card>().parent = this;
         card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         FlexibleHeight();
+    }
+
+    internal int GetChildIndex(Card card)
+    {
+        return cards.FindIndex(c => c.gameObject);
     }
 
     void FlexibleHeight()

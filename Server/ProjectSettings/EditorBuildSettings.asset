@@ -5,9 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/LAN-server.unity
   - enabled: 1
-    path: Assets/Scenes/LAN-client.unity
+    path: Assets/Scenes/offline.unity
   - enabled: 1
-    path: Assets/Scenes/LAN-client-connect.unity
+    path: Assets/Scenes/online.unity

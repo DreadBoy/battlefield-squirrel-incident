@@ -8,11 +8,13 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public CardType type;
     
     public CardPanel parent;
+    public int index = -1;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         parent.RemoveChild(this);
+        index = parent.GetChildIndex();
     }
 
     public void OnDrag(PointerEventData eventData)
