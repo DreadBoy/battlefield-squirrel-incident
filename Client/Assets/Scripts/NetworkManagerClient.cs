@@ -29,11 +29,13 @@ public class NetworkManagerClient : NetworkManager
 
     public override void OnClientConnect(NetworkConnection conn)
     {
+        base.OnClientConnect(conn);
         SceneManager.LoadScene("online");
     }
 
     public override void OnStopClient()
     {
+        base.OnStopClient();
         SceneManager.LoadScene("offline");
     }
 
@@ -42,7 +44,7 @@ public class NetworkManagerClient : NetworkManager
         if (client == null)
             return;
 
-        //client.Send(1002, message);
+        client.Send(1337, message);
         OnMesssage();
     }
 
@@ -73,6 +75,7 @@ public class NetworkManagerClient : NetworkManager
     {
         public int[] hand;
         public int[] command;
+        public int connectionId;
     }
 
 

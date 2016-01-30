@@ -26,7 +26,8 @@ public class CardManager : MonoBehaviour
         var message = new NetworkManagerClient.PlayerHandMessage()
         {
             hand = hand.cards.Select<GameObject, int>(go => (int)go.GetComponent<Card>().type).ToArray(),
-            command = command.cards.Select<GameObject, int>(go => (int)go.GetComponent<Card>().type).ToArray()
+            command = command.cards.Select<GameObject, int>(go => (int)go.GetComponent<Card>().type).ToArray(),
+            connectionId = client.client.connection.connectionId
         };
         while (command.cards.Count > 0)
         {
