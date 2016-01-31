@@ -43,11 +43,22 @@ public class CardManager : MonoBehaviour
             return;
 
         var i = 0;
-        while(hand.cards.Count < hand.maxCards && i < cards.Length)
+        while (hand.cards.Count < hand.maxCards && i < cards.Length)
         {
             hand.CreateChild(Instantiate(cardTypeManager.prefabs[(CardType)cards[i]]));
             i++;
         }
-            
+
+    }
+
+    public void changeParent(Card card)
+    {
+        var target = card.parent == hand ? command : hand;
+        if (target.hasSpace())
+        {
+            card.parent.RemoveChild(card);
+            target.AddChild(card);
+
+        }
     }
 }

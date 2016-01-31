@@ -1040,12 +1040,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1649607091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da59a690877a5f44a9c857eec677fdbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dc40feab85c9b84a881367a47b2a60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flexibleHeight: 1
   cards: []
-  EndTurn: {fileID: 0}
   maxCards: 28
 --- !u!114 &1649607094
 MonoBehaviour:
@@ -1478,8 +1477,8 @@ GameObject:
   - 222: {fileID: 2104407555}
   - 114: {fileID: 2104407554}
   - 114: {fileID: 2104407553}
-  - 114: {fileID: 2104407552}
   - 114: {fileID: 2104407551}
+  - 114: {fileID: 2104407552}
   m_Layer: 5
   m_Name: Command
   m_TagString: Untagged
@@ -1543,12 +1542,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2104407549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da59a690877a5f44a9c857eec677fdbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dc40feab85c9b84a881367a47b2a60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flexibleHeight: 1
   cards: []
-  EndTurn: {fileID: 1555949493}
   maxCards: 6
 --- !u!114 &2104407553
 MonoBehaviour:
@@ -1566,7 +1564,7 @@ MonoBehaviour:
     m_Right: 17
     m_Top: 17
     m_Bottom: 17
-  m_ChildAlignment: 3
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 70}

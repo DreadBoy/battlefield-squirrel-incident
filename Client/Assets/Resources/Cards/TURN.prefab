@@ -11,8 +11,8 @@ GameObject:
   - 222: {fileID: 22207450}
   - 114: {fileID: 11484142}
   - 114: {fileID: 11477972}
-  - 114: {fileID: 11472122}
   - 225: {fileID: 22565190}
+  - 114: {fileID: 11454326}
   m_Layer: 5
   m_Name: TURN
   m_TagString: Untagged
@@ -70,7 +70,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: TURN
---- !u!114 &11472122
+--- !u!114 &11454326
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 111876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30317b909affe014caafe8f0ec3710b0, type: 3}
+  m_Script: {fileID: 11500000, guid: cbeefbff9d8498d44b0f636996fcd875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 11
@@ -121,7 +121,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11484142}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11454326}
+        m_MethodName: changeParent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11484142
@@ -217,6 +228,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: type
       value: 11
       objectReference: {fileID: 0}
@@ -257,6 +272,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: 0.7941176
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11454326}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changeParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

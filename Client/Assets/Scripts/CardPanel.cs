@@ -1,129 +1,85 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.EventSystems;
-using System;
 using System.Collections.Generic;
+using System;
 using UnityEngine.UI;
-using System.Linq;
 
-public class CardPanel : MonoBehaviour, IDropHandler
+public class CardPanel : MonoBehaviour
 {
     public Boolean flexibleHeight = true;
 
     public List<GameObject> cards = new List<GameObject>();
-    public Button EndTurn;
 
     public int maxCards;
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        var card = eventData.pointerDrag.GetComponent<Card>();
-        card.target = this;
-        if (card.target.cards.Count >= card.target.maxCards)
-            card.target = null;
-    }
+    GameObject button;
 
-    public void RemoveChild(Card card)
+    void Start()
     {
-        cards.Remove(card.gameObject);
-        card.gameObject.transform.SetParent(this.transform.parent);
-        FlexibleHeight();
+        button = GameObject.Find("EndPhase");
     }
-
 
     public void DeleteChild(Card card)
     {
         cards.Remove(card.gameObject);
         GameObject.Destroy(card.gameObject);
         FlexibleHeight();
-        CheckPattern();
+    }
+
+
+    public void RemoveChild(Card card)
+    {
+        cards.Remove(card.gameObject);
+        card.gameObject.transform.SetParent(transform.parent);
+        FlexibleHeight();
     }
 
     public void CreateChild(GameObject gameObject)
     {
         gameObject.GetComponent<Card>().parent = this;
-        gameObject.GetComponent<Card>().target = null;
         cards.Add(gameObject);
         gameObject.transform.SetParent(transform);
         gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         FlexibleHeight();
-        CheckPattern();
     }
 
-    public void AddChild(Card card)
+    public bool AddChild(Card card)
     {
-        if(card.target.cards.Count >= card.target.maxCards)
+        cards.Add(card.gameObject);
+        foreach (var c in cards)
+            c.transform.SetParent(transform.parent);
+        foreach (var c in cards)
         {
-            card.target = card.parent;
-            AddChild(card);
-            return;
-        }
-        card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        card.target.cards.Add(card.gameObject);
-        foreach (var c in card.target.cards)
-            c.transform.SetParent(card.target.transform.parent);
-        foreach (var c in card.target.cards)
-        {
-            c.transform.SetParent(card.target.transform);
+            c.transform.SetParent(transform);
             card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
         card.parent = this;
-        card.target = null;
         FlexibleHeight();
-        CheckPattern();
-    }
-    internal void AddChild(Card card, int index)
-    {
-        if (card.parent.cards.Count >= card.parent.maxCards)
-        {
-            card.target = card.parent;
-            AddChild(card);
-            return;
-        }
-        if (index > cards.Count)
-            index = cards.Count;
-        card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        card.target.cards.Insert(index, card.gameObject);
-        foreach (var c in card.target.cards)
-            c.transform.SetParent(card.target.transform.parent);
-        foreach (var c in card.target.cards)
-        {
-            c.transform.SetParent(card.target.transform);
-            card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        }
-        card.parent = this;
-        card.target = null;
-        FlexibleHeight();
-        CheckPattern();
+
+        return true;
     }
 
-    internal int GetChildIndex(Card card)
+    private bool CheckPattern()
     {
-        return cards.FindIndex(c => c.gameObject == card.gameObject);
-    }
-
-    void CheckPattern()
-    {
-        if (EndTurn == null)
-            return;
         if (cards.Count % 2 != 0)
+            return false;
+
+        for (int i = 0; i < cards.Count - 1; i += 2)
         {
-            EndTurn.gameObject.SetActive(false);
-            return;
+            var first = (int)cards[i].GetComponent<Card>().type;
+            var second = (int)cards[i+1].GetComponent<Card>().type;
+            if (!(10 <= first && first <= 11 && 0 <= second && second <= 9))
+                return false;
         }
-        var valid = true;
-        for (int i = 0; i < cards.Count - 1; i+=2)
-        {
-            var type1 = (int)cards[i].GetComponent<Card>().type;
-            var type2 = (int)cards[i + 1].GetComponent<Card>().type;
-            if (!(10 <= type1 && type1 <= 11 && 0 <= type2 && type2 <= 9))
-            {
-                valid = false;
-                break;
-            }
-        }
-        EndTurn.gameObject.SetActive(valid);
+        return true;
     }
+
+    internal bool hasSpace()
+    {
+        return cards.Count < maxCards;
+    }
+
+
 
     void FlexibleHeight()
     {
