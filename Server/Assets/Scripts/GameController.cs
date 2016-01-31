@@ -14,9 +14,6 @@ public class GameController : MonoBehaviour
 
     private List<Player> players = new List<Player>();
     private List<Pickup> pickups = new List<Pickup>();
-
-    private bool playerActing = false;
-    private int activePlayerId = -1;
     
     public void PlayerConnected(int id)
     {
