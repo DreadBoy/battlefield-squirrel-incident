@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
 
     private bool playerActing = false;
     private int activePlayerId = -1;
-    private static float _moveSpeed = 0.6f;
 
 
     public class Player
@@ -27,6 +26,7 @@ public class GameController : MonoBehaviour
         public int id;
         public GameObject gameEntity;
         public Animator animator;
+        public List<int> commandStack = new List<int>();
         public List<int> handStack = new List<int>();
         public int positionX = 0;
         public int positionY = 0;
@@ -45,6 +45,20 @@ public class GameController : MonoBehaviour
             rotation = UnityEngine.Random.Range(0, 3);
             animator = gameEntity.GetComponent<Animator>();
             animator.SetInteger("Direction", rotation);
+
+            generateHand();
+
+        }
+
+        public void generateHand()
+        {
+            int[] cards = new int[4];
+            for (int i = 0; i < 2; i++)
+                cards[i] = UnityEngine.Random.Range(0, 9);
+            for (int i = 2; i < 4; i++)
+                cards[i] = UnityEngine.Random.Range(10, 12);
+            handStack.Clear();
+            handStack.AddRange(cards);
         }
 
         public ActionData Move(int number)
@@ -53,7 +67,7 @@ public class GameController : MonoBehaviour
             actionData.action = CardType.move;
             actionData.moveStart = gameEntity.transform.position;
             actionData.movePosition = 0;
-            actionData.moveSpeed = 1.0f / number;
+            actionData.moveSpeed = 50.0f / number;
             switch (rotation)
             {
                 //up
@@ -84,7 +98,7 @@ public class GameController : MonoBehaviour
             actionData.turnStart = rotation;
             actionData.turnEnd = rotation + number;
             actionData.turnRotation = 0;
-            actionData.turnSpeed = 1.0f / number;
+            actionData.turnSpeed = 50.0f / number;
             return actionData;
         }
 
@@ -135,7 +149,7 @@ public class GameController : MonoBehaviour
                         moveData.moveStart,
                         moveData.moveEnd,
                         moveData.movePosition);
-                    moveData.movePosition += _moveSpeed / (moveData.moveStart - moveData.moveEnd).magnitude * Time.fixedDeltaTime;
+                    moveData.movePosition += moveData.moveSpeed / (moveData.moveStart - moveData.moveEnd).magnitude * Time.fixedDeltaTime;
 
                     if (moveData.movePosition > 1.0f)
                     {
@@ -149,7 +163,7 @@ public class GameController : MonoBehaviour
                         turnData.turnStart,
                         turnData.turnEnd,
                         turnData.turnRotation)) % 4;
-                    turnData.turnRotation += _moveSpeed / (turnData.turnEnd - turnData.turnStart) * Time.fixedDeltaTime;
+                    turnData.turnRotation += turnData.turnSpeed / (turnData.turnEnd - turnData.turnStart) * Time.fixedDeltaTime;
 
                     animator.SetInteger("Direction", rotation);
 
@@ -169,6 +183,12 @@ public class GameController : MonoBehaviour
     {
         Player player = new Player(id, Instantiate(playerPrefab));
         players.Add(player);
+        networkManager.ServerSendHand(new NetworkManagerServer.PlayerHandMessage()
+        {
+            command = new int[0],
+            hand = player.handStack.ToArray(),
+            connectionId = id
+        });
     }
 
     public void PlayerDisconnected(int id)
@@ -189,13 +209,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void PlayerDrawHand(NetworkManagerServer.PlayerHandMessage hand)
+    public void PlayerGetCommand(NetworkManagerServer.PlayerHandMessage playerHandMessage)
     {
         foreach (Player player in players)
         {
-            if (player.id == hand.connectionId)
+            if (player.id == playerHandMessage.connectionId)
             {
-                player.handStack.AddRange(hand.command);
+                player.commandStack.AddRange(playerHandMessage.command);
+                player.generateHand();
+                networkManager.ServerSendHand(new NetworkManagerServer.PlayerHandMessage()
+                {
+                    command = new int[0],
+                    hand = player.handStack.ToArray(),
+                    connectionId = playerHandMessage.connectionId
+                });
             }
         }
     }
@@ -203,13 +230,9 @@ public class GameController : MonoBehaviour
 
     private static Vector3 GetLocationFromBoardTile(int x, int y)
     {
-        //    float halfW = TileSize * BoardWidth * 0.5f;
-        //    float halfH = TileSize * BoardHeight * 0.5f;
-        //    return new Vector3( x * TileSize - halfW, y * TileSize * halfH, 0 );
         return new Vector3(x * _TileSize + _TileSize / 2, y * _TileSize + _TileSize / 2, -9);
     }
 
-    // Use this for initialization
     void Start()
     {
         if (networkManager == null)
@@ -217,7 +240,7 @@ public class GameController : MonoBehaviour
 
         networkManager.onClientConnected += new NetworkManagerServer.ClientConnectEventHandler(PlayerConnected);
         networkManager.onClientDisconnected += new NetworkManagerServer.ClientDisconnectEventHandler(PlayerDisconnected);
-        networkManager.onClientData += new NetworkManagerServer.CliendDataEventHandler(PlayerDrawHand);
+        networkManager.onClientData += new NetworkManagerServer.CliendDataEventHandler(PlayerGetCommand);
 
         _TileSize = TileSize;
         _BoardHeight = BoardHeight;
@@ -229,7 +252,6 @@ public class GameController : MonoBehaviour
         return !players[activePlayerId].doAction();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (playerActing)
@@ -242,18 +264,18 @@ public class GameController : MonoBehaviour
             {
                 if (activePlayerId < 0)
                     activePlayerId = 0; // first player
-                else if (players[activePlayerId].handStack.Count == 0) // player has end his turn
+                else if (players[activePlayerId].commandStack.Count == 0) // player has end his turn
                     activePlayerId = (activePlayerId + 1) % players.Count; // move to next player
             }
 
             // select card
             Player player = players[activePlayerId];
-            if (player.handStack.Count > 0)
+            if (player.commandStack.Count > 0)
             {
-                var activeAction = (CardType)player.handStack[0];
-                player.handStack.RemoveAt(0);
-                var activeNumber = player.handStack[0];
-                player.handStack.RemoveAt(0);
+                var activeAction = (CardType)player.commandStack[0];
+                player.commandStack.RemoveAt(0);
+                var activeNumber = player.commandStack[0];
+                player.commandStack.RemoveAt(0);
 
                 player.createAction(activeAction, activeNumber);
                 playerActing = true;

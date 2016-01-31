@@ -14,8 +14,9 @@ public class CardManager : MonoBehaviour
     {
         if (client == null)
             client = FindObjectOfType<NetworkManagerClient>();
-        client.OnNewCardsEvent += new NetworkManagerClient.NewCardsEventHandler(newCards);
         cardTypeManager = GetComponent<CardTypeManager>();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void EndTurnAndSendMessage()
@@ -27,7 +28,7 @@ public class CardManager : MonoBehaviour
         {
             hand = hand.cards.Select<GameObject, int>(go => (int)go.GetComponent<Card>().type).ToArray(),
             command = command.cards.Select<GameObject, int>(go => (int)go.GetComponent<Card>().type).ToArray(),
-            connectionId = client.client.connection.connectionId
+            connectionId = client.connectionId
         };
         while (command.cards.Count > 0)
         {
@@ -36,15 +37,12 @@ public class CardManager : MonoBehaviour
         client.EndTurn(message);
     }
 
-    public void newCards(object sender, NetworkManagerClient.NewCardsEventArgs cardsEvents)
+    public void newCards(int[] cards)
     {
         if (cardTypeManager == null)
             return;
 
-        foreach (var card in cardsEvents.cards)
-        {
-            GameObject gameObject = Instantiate(cardTypeManager.prefabs[(CardType)card]);
-            hand.AddChild(gameObject.GetComponent<Card>());
-        }
+        foreach (var card in cards)
+            hand.CreateChild(GameObject.Instantiate(cardTypeManager.prefabs[(CardType)card]));
     }
 }

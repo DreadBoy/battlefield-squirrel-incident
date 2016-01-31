@@ -11,6 +11,5 @@
     eight = 8,
     nine = 9,
     move = 10,
-    turn = 11,
-    loop = 12
+    turn = 11
 }

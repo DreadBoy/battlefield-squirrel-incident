@@ -9,11 +9,18 @@ public class NetworkManagerClient : NetworkManager
     public delegate void NewCardsEventHandler(object sender, NewCardsEventArgs e);
     public event NewCardsEventHandler OnNewCardsEvent;
 
+    public int connectionId;
+
+    public Canvas offline;
+    public Canvas online;
+
     public void JoinGame()
     {
         SetIPAddress();
         SetPort();
         StartClient(); //Unity method
+        client.RegisterHandler(1338, OnServerGetHand);
+        client.RegisterHandler(1339, OnServerGetConnectionId);
     }
 
     void SetIPAddress()
@@ -30,13 +37,12 @@ public class NetworkManagerClient : NetworkManager
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
-        SceneManager.LoadScene("online");
     }
 
     public override void OnStopClient()
     {
         base.OnStopClient();
-        SceneManager.LoadScene("offline");
+        goOffline();
     }
 
     public void EndTurn(PlayerHandMessage message)
@@ -45,27 +51,21 @@ public class NetworkManagerClient : NetworkManager
             return;
 
         client.Send(1337, message);
-        OnMesssage();
     }
 
-    public void OnMesssage()
+    public void OnServerGetHand(NetworkMessage netMsg)
     {
-        int[] cards = new int[5];
-        for (int i = 0; i < 3; i++)
-            cards[i] = UnityEngine.Random.Range(0, 9);
-        for (int i = 3; i < 5; i++)
-            cards[i] = UnityEngine.Random.Range(10, 12);
-
-        var cardEvent = new NewCardsEventArgs() { cards = cards };
-        OnNewCards(cardEvent);
+        var msg = netMsg.ReadMessage<PlayerHandMessage>();
+        FindObjectOfType<CardManager>().newCards(msg.hand);
     }
 
-    protected virtual void OnNewCards(NewCardsEventArgs e)
+    public void OnServerGetConnectionId(NetworkMessage netMsg)
     {
-        if (OnNewCardsEvent != null)
-            OnNewCardsEvent(this, e);
+        var msg = netMsg.ReadMessage<ConnectionIdMessage>();
+        connectionId = msg.connectionId;
+        goOnline();
     }
-
+    
     public class NewCardsEventArgs : EventArgs
     {
         public int[] cards;
@@ -76,6 +76,28 @@ public class NetworkManagerClient : NetworkManager
         public int[] hand;
         public int[] command;
         public int connectionId;
+    }
+
+    public class ConnectionIdMessage : MessageBase
+    {
+        public int connectionId;
+    }
+
+    void goOnline()
+    {
+        if (offline == null || online == null)
+            return;
+        offline.gameObject.SetActive(false);
+        online.gameObject.SetActive(true);
+    }
+
+    void goOffline()
+    {
+        if (offline == null || online == null)
+            return;
+        offline.gameObject.SetActive(true);
+        online.gameObject.SetActive(false);
+
     }
 
 

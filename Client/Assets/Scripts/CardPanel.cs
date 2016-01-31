@@ -12,33 +12,10 @@ public class CardPanel : MonoBehaviour, IDropHandler
 
     public List<GameObject> cards = new List<GameObject>();
 
-    public void Start()
-    {
-        foreach (Transform child in transform)
-        {
-            child.GetComponent<Card>().parent = this;
-            cards.Add(child.gameObject);
-        }
-        FlexibleHeight();
-    }
-
     public void OnDrop(PointerEventData eventData)
     {
         var card = eventData.pointerDrag.GetComponent<Card>();
         card.target = this;
-        /*
-                var grid = GetComponent<GridLayoutGroup>();
-                var rectTransform = GetComponent<RectTransform>();
-
-                Vector3[] corners = new Vector3[4];
-                rectTransform.GetLocalCorners(corners);
-
-                var position = Input.mousePosition - new Vector3(corners[0].y, corners[0].x);
-                int rows = (int)Math.Ceiling((double)cards.Count / grid.constraintCount);
-                var row = (int)Math.Floor(position.y / (rectTransform.rect.height / rows)) - 1;
-                var column = (int)Math.Ceiling(position.x / (rectTransform.rect.width / grid.constraintCount));
-                card.indexTarget = row * 8 + column;
-                */
     }
 
     public void RemoveChild(Card card)
@@ -54,7 +31,16 @@ public class CardPanel : MonoBehaviour, IDropHandler
         cards.Remove(card.gameObject);
         GameObject.Destroy(card.gameObject);
         FlexibleHeight();
+    }
 
+    public void CreateChild(GameObject gameObject)
+    {
+        gameObject.GetComponent<Card>().parent = this;
+        gameObject.GetComponent<Card>().target = null;
+        cards.Add(gameObject);
+        gameObject.transform.SetParent(transform);
+        gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        FlexibleHeight();
     }
 
     public void AddChild(Card card)
@@ -66,7 +52,10 @@ public class CardPanel : MonoBehaviour, IDropHandler
         foreach (var c in cards)
             c.transform.SetParent(transform.parent);
         foreach (var c in cards)
+        {
             c.transform.SetParent(transform);
+            card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        }
         FlexibleHeight();
     }
     internal void AddChild(Card card, int index)
@@ -80,7 +69,10 @@ public class CardPanel : MonoBehaviour, IDropHandler
         foreach (var c in cards)
             c.transform.SetParent(transform.parent);
         foreach (var c in cards)
+        {
             c.transform.SetParent(transform);
+            card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        }
         FlexibleHeight();
     }
 
