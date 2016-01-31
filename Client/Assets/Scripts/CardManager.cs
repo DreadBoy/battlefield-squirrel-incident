@@ -42,7 +42,12 @@ public class CardManager : MonoBehaviour
         if (cardTypeManager == null)
             return;
 
-        foreach (var card in cards)
-            hand.CreateChild(GameObject.Instantiate(cardTypeManager.prefabs[(CardType)card]));
+        var i = 0;
+        while(hand.cards.Count < hand.maxCards && i < cards.Length)
+        {
+            hand.CreateChild(Instantiate(cardTypeManager.prefabs[(CardType)cards[i]]));
+            i++;
+        }
+            
     }
 }

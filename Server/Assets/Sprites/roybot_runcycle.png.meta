@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 9a729faa4e989bc448520f58816d9bfe
+timeCreated: 1454235973
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: roybot_runcycle_0
+    21300002: roybot_runcycle_1
+    21300004: roybot_runcycle_2
+    21300006: roybot_runcycle_3
+    21300008: roybot_runcycle_4
+    21300010: roybot_runcycle_5
+    21300012: roybot_runcycle_6
+    21300014: roybot_runcycle_7
+    21300016: roybot_runcycle_8
+    21300018: roybot_runcycle_9
+    21300020: roybot_runcycle_10
+    21300022: roybot_runcycle_11
+    21300024: roybot_runcycle_12
+    21300026: roybot_runcycle_13
+    21300028: roybot_runcycle_14
+    21300030: roybot_runcycle_15
+    21300032: roybot_runcycle_16
+    21300034: roybot_runcycle_17
+    21300036: roybot_runcycle_18
+    21300038: roybot_runcycle_19
+    21300040: roybot_runcycle_20
+    21300042: roybot_runcycle_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: roybot_runcycle_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 384
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 52}
+        - {x: -37, y: -1}
+        - {x: -37, y: -45}
+        - {x: -10, y: -52}
+        - {x: 23, y: -52}
+        - {x: 37, y: -32}
+        - {x: 37, y: 47}
+        - {x: 34, y: 52}
+    - name: roybot_runcycle_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 384
+        width: 72
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: -41}
+        - {x: 24, y: -41}
+        - {x: 36, y: 2}
+        - {x: 36, y: 33}
+        - {x: 32, y: 49}
+        - {x: 28, y: 52}
+        - {x: -10, y: 52}
+        - {x: -36, y: 12}
+        - {x: -36, y: -46}
+        - {x: 3, y: -52}
+        - {x: 18, y: -52}
+        - {x: 23, y: -47}
+        - {x: 23, y: -43}
+        - {x: 21, y: -41}
+    - name: roybot_runcycle_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 384
+        width: 65
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 50}
+        - {x: -9.5, y: 50}
+        - {x: -19.5, y: 47}
+        - {x: -32.5, y: 1}
+        - {x: -32.5, y: -48}
+        - {x: -21.5, y: -50}
+        - {x: 29.5, y: -50}
+        - {x: 32.5, y: -11}
+        - {x: 32.5, y: 33}
+        - {x: 21.5, y: 46}
+    - name: roybot_runcycle_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 384
+        width: 56
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 48}
+        - {x: -28, y: 36}
+        - {x: -28, y: -44}
+        - {x: -24, y: -44}
+        - {x: -8, y: -48}
+        - {x: 20, y: -48}
+        - {x: 28, y: -33}
+        - {x: 28, y: 35}
+        - {x: 25, y: 48}
+    - name: roybot_runcycle_4
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 384
+        width: 54
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 48.5}
+        - {x: -27, y: -37.5}
+        - {x: -21, y: -48.5}
+        - {x: 16, y: -48.5}
+        - {x: 27, y: -46.5}
+        - {x: 27, y: 47.5}
+        - {x: 24, y: 48.5}
+    - name: roybot_runcycle_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 384
+        width: 56
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 51.5}
+        - {x: -28, y: -40.5}
+        - {x: -11, y: -51.5}
+        - {x: 28, y: -51.5}
+        - {x: 28, y: 51.5}
+    - name: roybot_runcycle_6
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 384
+        width: 53
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: -15.5}
+        - {x: 26.5, y: -14.5}
+        - {x: 26.5, y: 21.5}
+        - {x: 24.5, y: 39.5}
+        - {x: 10.5, y: 54.5}
+        - {x: -22.5, y: 54.5}
+        - {x: -26.5, y: 49.5}
+        - {x: -26.5, y: -26.5}
+        - {x: -13.5, y: -54.5}
+        - {x: 18.5, y: -54.5}
+        - {x: 26.5, y: -52.5}
+        - {x: 26.5, y: -18.5}
+        - {x: 21.5, y: -16.5}
+        - {x: 18.5, y: -16.5}
+    - name: roybot_runcycle_7
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 385
+        width: 57
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 55.5}
+        - {x: -28.5, y: -54.5}
+        - {x: -26.5, y: -55.5}
+        - {x: 28.5, y: -55.5}
+        - {x: 28.5, y: -15.5}
+        - {x: 25.5, y: 39.5}
+        - {x: 9.5, y: 55.5}
+    - name: roybot_runcycle_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 259
+        width: 65
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 53}
+        - {x: 10.5, y: 54}
+        - {x: -20.5, y: 54}
+        - {x: -25.5, y: 47}
+        - {x: -32.5, y: 27}
+        - {x: -32.5, y: -29}
+        - {x: -27.5, y: -34}
+        - {x: -29.5, y: -40}
+        - {x: -29.5, y: -50}
+        - {x: -24.5, y: -54}
+        - {x: 17.5, y: -54}
+        - {x: 32.5, y: -49}
+        - {x: 32.5, y: -11}
+        - {x: 25.5, y: 35}
+    - name: roybot_runcycle_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 260
+        width: 70
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 52.5}
+        - {x: -35, y: 22.5}
+        - {x: -35, y: -51.5}
+        - {x: -31, y: -52.5}
+        - {x: 35, y: -52.5}
+        - {x: 35, y: 29.5}
+        - {x: 29, y: 52.5}
+    - name: roybot_runcycle_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 258
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 53}
+        - {x: -36.5, y: 18}
+        - {x: -36.5, y: -53}
+        - {x: 19.5, y: -53}
+        - {x: 36.5, y: -46}
+        - {x: 36.5, y: 45}
+        - {x: 24.5, y: 53}
+    - name: roybot_runcycle_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 256
+        width: 73
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 52}
+        - {x: -36.5, y: 8}
+        - {x: -36.5, y: -52}
+        - {x: 25.5, y: -52}
+        - {x: 36.5, y: -42}
+        - {x: 36.5, y: 35}
+        - {x: 26.5, y: 52}
+    - name: roybot_runcycle_12
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 256
+        width: 74
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: -20.5}
+        - {x: 37, y: 5.5}
+        - {x: 37, y: 6.5}
+        - {x: 30, y: 50.5}
+        - {x: -9, y: 50.5}
+        - {x: -15, y: 43.5}
+        - {x: -34, y: 0.5}
+        - {x: -37, y: -8.5}
+        - {x: -37, y: -31.5}
+        - {x: -24, y: -50.5}
+        - {x: 3, y: -50.5}
+        - {x: 37, y: -35.5}
+        - {x: 37, y: -21.5}
+        - {x: 36, y: -20.5}
+    - name: roybot_runcycle_13
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 256
+        width: 74
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 48.5}
+        - {x: -17, y: 48.5}
+        - {x: -37, y: 26.5}
+        - {x: -37, y: -47.5}
+        - {x: -36, y: -48.5}
+        - {x: -3, y: -48.5}
+        - {x: 37, y: -31.5}
+        - {x: 37, y: 18.5}
+        - {x: 36, y: 29.5}
+    - name: roybot_runcycle_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 256
+        width: 70
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 48}
+        - {x: -35, y: -48}
+        - {x: 15, y: -48}
+        - {x: 35, y: -31}
+        - {x: 35, y: 19}
+        - {x: 22, y: 48}
+    - name: roybot_runcycle_15
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 256
+        width: 66
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -48.5}
+        - {x: 16, y: -48.5}
+        - {x: 26, y: -47.5}
+        - {x: 33, y: -38.5}
+        - {x: 33, y: 16.5}
+        - {x: 25, y: 40.5}
+        - {x: 5, y: 48.5}
+        - {x: -33, y: 48.5}
+        - {x: -33, y: -48.5}
+        - {x: -17, y: -48.5}
+        - {x: -14, y: -42.5}
+        - {x: -13, y: -38.5}
+        - {x: -13, y: -40.5}
+    - name: roybot_runcycle_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 64
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 37.5}
+        - {x: 10, y: 51.5}
+        - {x: -32, y: 51.5}
+        - {x: -32, y: -51.5}
+        - {x: 18, y: -51.5}
+        - {x: 32, y: -44.5}
+        - {x: 32, y: -0.5}
+    - name: roybot_runcycle_17
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 131
+        width: 55
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: -22}
+        - {x: 21.5, y: -18}
+        - {x: 19.5, y: -18}
+        - {x: 26.5, y: -17}
+        - {x: 27.5, y: -16}
+        - {x: 27.5, y: 46}
+        - {x: 11.5, y: 53}
+        - {x: -26.5, y: 53}
+        - {x: -27.5, y: 51}
+        - {x: -27.5, y: -53}
+        - {x: 22.5, y: -53}
+        - {x: 27.5, y: -45}
+        - {x: 27.5, y: -32}
+    - name: roybot_runcycle_18
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 131
+        width: 57
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: -40.5}
+        - {x: 25.5, y: -36.5}
+        - {x: 27.5, y: -33.5}
+        - {x: 28.5, y: -31.5}
+        - {x: 28.5, y: 44.5}
+        - {x: 23.5, y: 54.5}
+        - {x: -18.5, y: 54.5}
+        - {x: -28.5, y: 47.5}
+        - {x: -28.5, y: -54.5}
+        - {x: 23.5, y: -54.5}
+        - {x: 26.5, y: -47.5}
+        - {x: 25.5, y: -43.5}
+        - {x: 23.5, y: -39.5}
+    - name: roybot_runcycle_19
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 130
+        width: 64
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 55}
+        - {x: -32, y: 45}
+        - {x: -32, y: -55}
+        - {x: 32, y: -55}
+        - {x: 32, y: 55}
+    - name: roybot_runcycle_20
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 129
+        width: 68
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 53.5}
+        - {x: -21, y: 53.5}
+        - {x: -27, y: 49.5}
+        - {x: -34, y: 12.5}
+        - {x: -34, y: -42.5}
+        - {x: -32, y: -47.5}
+        - {x: -27, y: -47.5}
+        - {x: -10, y: -53.5}
+        - {x: 26, y: -53.5}
+        - {x: 29, y: -41.5}
+        - {x: 34, y: 2.5}
+        - {x: 34, y: 52.5}
+    - name: roybot_runcycle_21
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 128
+        width: 72
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 52.5}
+        - {x: -12, y: 52.5}
+        - {x: -16, y: 49.5}
+        - {x: -36, y: -3.5}
+        - {x: -36, y: -44.5}
+        - {x: -12, y: -52.5}
+        - {x: 19, y: -52.5}
+        - {x: 27, y: -48.5}
+        - {x: 36, y: 9.5}
+        - {x: 36, y: 38.5}
+        - {x: 32, y: 51.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

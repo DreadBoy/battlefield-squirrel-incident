@@ -120,7 +120,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000015258789, y: 62}
-  m_SizeDelta: {x: 300, y: 80}
+  m_SizeDelta: {x: 370, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99163035
 MonoBehaviour:
@@ -284,7 +284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: End Turn
+  m_Text: End Phase
 --- !u!222 &132142712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -414,8 +414,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: -46.6, y: -13}
+  m_AnchoredPosition: {x: 0.0000009536743, y: -0.5}
+  m_SizeDelta: {x: -76, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221320337
 MonoBehaviour:
@@ -438,11 +438,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 27
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 43
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -488,7 +488,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.00000047683716, y: -0.5}
-  m_SizeDelta: {x: -46.6, y: -13}
+  m_SizeDelta: {x: -76, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667717224
 MonoBehaviour:
@@ -511,7 +511,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07edeb9a665589b479e345288605cb12, type: 3}
-    m_FontSize: 27
+    m_FontSize: 40
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 2
@@ -908,8 +908,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 120}
+  m_AnchoredPosition: {x: 0, y: -125}
+  m_SizeDelta: {x: 350, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555949493
 MonoBehaviour:
@@ -982,8 +982,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bf066a13e52a47f4b993b4f053aed90b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a38d0e3cdfb67f048a348db0c6997793, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1045,6 +1045,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flexibleHeight: 1
   cards: []
+  EndTurn: {fileID: 0}
+  maxCards: 28
 --- !u!114 &1649607094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,7 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.875, g: 0.875, b: 0.875, a: 1}
+  m_Color: {r: 0.8161765, g: 0.8161765, b: 0.8161765, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1156,7 +1158,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 07edeb9a665589b479e345288605cb12, type: 3}
-    m_FontSize: 38
+    m_FontSize: 51
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1248,7 +1250,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -88}
-  m_SizeDelta: {x: 300, y: 120}
+  m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974615700
 MonoBehaviour:
@@ -1321,8 +1323,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bf066a13e52a47f4b993b4f053aed90b, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a38d0e3cdfb67f048a348db0c6997793, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1431,7 +1433,7 @@ Transform:
   m_GameObject: {fileID: 2067186031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 919478785}
   m_RootOrder: 0
@@ -1461,7 +1463,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 201d9accbf0731b45bf891b9f00a8426, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f59dc48635669643b60386ac850539c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1546,6 +1548,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flexibleHeight: 1
   cards: []
+  EndTurn: {fileID: 1555949493}
+  maxCards: 6
 --- !u!114 &2104407553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,7 +1572,7 @@ MonoBehaviour:
   m_CellSize: {x: 150, y: 70}
   m_Spacing: {x: 17, y: 17}
   m_Constraint: 1
-  m_ConstraintCount: 7
+  m_ConstraintCount: 6
 --- !u!114 &2104407554
 MonoBehaviour:
   m_ObjectHideFlags: 0

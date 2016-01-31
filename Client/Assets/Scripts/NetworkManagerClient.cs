@@ -43,6 +43,8 @@ public class NetworkManagerClient : NetworkManager
     {
         base.OnStopClient();
         goOffline();
+        FindObjectOfType<CardManager>().hand.cards.Clear();
+        FindObjectOfType<CardManager>().command.cards.Clear();
     }
 
     public void EndTurn(PlayerHandMessage message)
@@ -64,6 +66,8 @@ public class NetworkManagerClient : NetworkManager
         var msg = netMsg.ReadMessage<ConnectionIdMessage>();
         connectionId = msg.connectionId;
         goOnline();
+        FindObjectOfType<CardManager>().hand.cards.Clear();
+        FindObjectOfType<CardManager>().command.cards.Clear();
     }
     
     public class NewCardsEventArgs : EventArgs

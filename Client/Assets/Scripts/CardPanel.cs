@@ -11,11 +11,16 @@ public class CardPanel : MonoBehaviour, IDropHandler
     public Boolean flexibleHeight = true;
 
     public List<GameObject> cards = new List<GameObject>();
+    public Button EndTurn;
+
+    public int maxCards;
 
     public void OnDrop(PointerEventData eventData)
     {
         var card = eventData.pointerDrag.GetComponent<Card>();
         card.target = this;
+        if (card.target.cards.Count >= card.target.maxCards)
+            card.target = null;
     }
 
     public void RemoveChild(Card card)
@@ -31,6 +36,7 @@ public class CardPanel : MonoBehaviour, IDropHandler
         cards.Remove(card.gameObject);
         GameObject.Destroy(card.gameObject);
         FlexibleHeight();
+        CheckPattern();
     }
 
     public void CreateChild(GameObject gameObject)
@@ -41,44 +47,82 @@ public class CardPanel : MonoBehaviour, IDropHandler
         gameObject.transform.SetParent(transform);
         gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         FlexibleHeight();
+        CheckPattern();
     }
 
     public void AddChild(Card card)
     {
-        card.gameObject.GetComponent<Card>().parent = this;
-        card.gameObject.GetComponent<Card>().target = null;
-        card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        cards.Add(card.gameObject);
-        foreach (var c in cards)
-            c.transform.SetParent(transform.parent);
-        foreach (var c in cards)
+        if(card.target.cards.Count >= card.target.maxCards)
         {
-            c.transform.SetParent(transform);
+            card.target = card.parent;
+            AddChild(card);
+            return;
+        }
+        card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        card.target.cards.Add(card.gameObject);
+        foreach (var c in card.target.cards)
+            c.transform.SetParent(card.target.transform.parent);
+        foreach (var c in card.target.cards)
+        {
+            c.transform.SetParent(card.target.transform);
             card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
+        card.parent = this;
+        card.target = null;
         FlexibleHeight();
+        CheckPattern();
     }
     internal void AddChild(Card card, int index)
     {
+        if (card.parent.cards.Count >= card.parent.maxCards)
+        {
+            card.target = card.parent;
+            AddChild(card);
+            return;
+        }
         if (index > cards.Count)
             index = cards.Count;
-        card.gameObject.GetComponent<Card>().parent = this;
-        card.gameObject.GetComponent<Card>().target = null;
         card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        cards.Insert(index, card.gameObject);
-        foreach (var c in cards)
-            c.transform.SetParent(transform.parent);
-        foreach (var c in cards)
+        card.target.cards.Insert(index, card.gameObject);
+        foreach (var c in card.target.cards)
+            c.transform.SetParent(card.target.transform.parent);
+        foreach (var c in card.target.cards)
         {
-            c.transform.SetParent(transform);
+            c.transform.SetParent(card.target.transform);
             card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         }
+        card.parent = this;
+        card.target = null;
         FlexibleHeight();
+        CheckPattern();
     }
 
     internal int GetChildIndex(Card card)
     {
         return cards.FindIndex(c => c.gameObject == card.gameObject);
+    }
+
+    void CheckPattern()
+    {
+        if (EndTurn == null)
+            return;
+        if (cards.Count % 2 != 0)
+        {
+            EndTurn.gameObject.SetActive(false);
+            return;
+        }
+        var valid = true;
+        for (int i = 0; i < cards.Count - 1; i+=2)
+        {
+            var type1 = (int)cards[i].GetComponent<Card>().type;
+            var type2 = (int)cards[i + 1].GetComponent<Card>().type;
+            if (!(10 <= type1 && type1 <= 11 && 0 <= type2 && type2 <= 9))
+            {
+                valid = false;
+                break;
+            }
+        }
+        EndTurn.gameObject.SetActive(valid);
     }
 
     void FlexibleHeight()

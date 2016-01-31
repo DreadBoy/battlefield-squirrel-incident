@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 7b6e7ecd6c81b164682e8f26d87fd4d3
+timeCreated: 1454235959
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: roybot_idle_horizontal_0
+    21300002: roybot_idle_horizontal_1
+    21300004: roybot_idle_horizontal_2
+    21300006: roybot_idle_horizontal_3
+    21300008: roybot_idle_horizontal_4
+    21300010: roybot_idle_horizontal_5
+    21300012: roybot_idle_horizontal_6
+    21300014: roybot_idle_horizontal_7
+    21300016: roybot_idle_horizontal_8
+    21300018: roybot_idle_horizontal_9
+    21300020: roybot_idle_horizontal_10
+    21300022: roybot_idle_horizontal_11
+    21300024: roybot_idle_horizontal_12
+    21300026: roybot_idle_horizontal_13
+    21300028: roybot_idle_horizontal_14
+    21300030: roybot_idle_horizontal_15
+    21300032: roybot_idle_horizontal_16
+    21300034: roybot_idle_horizontal_17
+    21300036: roybot_idle_horizontal_18
+    21300038: roybot_idle_horizontal_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: roybot_idle_horizontal_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 384
+        width: 53
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 52.5}
+        - {x: -26.5, y: 47.5}
+        - {x: -26.5, y: -43.5}
+        - {x: -20.5, y: -52.5}
+        - {x: 26.5, y: -52.5}
+        - {x: 26.5, y: 38.5}
+        - {x: 13.5, y: 52.5}
+    - name: roybot_idle_horizontal_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 384
+        width: 53
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 52.5}
+        - {x: -26.5, y: 43.5}
+        - {x: -26.5, y: -39.5}
+        - {x: -19.5, y: -52.5}
+        - {x: 26.5, y: -52.5}
+        - {x: 26.5, y: 37.5}
+        - {x: 15.5, y: 52.5}
+    - name: roybot_idle_horizontal_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 384
+        width: 52
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: -52.5}
+        - {x: 26, y: -52.5}
+        - {x: 26, y: 52.5}
+        - {x: -26, y: 52.5}
+        - {x: -26, y: -45.5}
+    - name: roybot_idle_horizontal_3
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 384
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 52.5}
+        - {x: -18, y: 52.5}
+        - {x: -28, y: 36.5}
+        - {x: -28, y: -37.5}
+        - {x: -20, y: -52.5}
+        - {x: 23, y: -52.5}
+        - {x: 25, y: -50.5}
+        - {x: 28, y: -14.5}
+        - {x: 28, y: 35.5}
+    - name: roybot_idle_horizontal_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 384
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 52.5}
+        - {x: -28, y: 33.5}
+        - {x: -28, y: -43.5}
+        - {x: -21, y: -52.5}
+        - {x: 28, y: -52.5}
+        - {x: 28, y: 51.5}
+        - {x: 26, y: 52.5}
+    - name: roybot_idle_horizontal_5
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 384
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 52.5}
+        - {x: -14, y: 52.5}
+        - {x: -28, y: 33.5}
+        - {x: -28, y: -52.5}
+        - {x: 27, y: -52.5}
+        - {x: 28, y: -44.5}
+        - {x: 28, y: 41.5}
+        - {x: 21, y: 50.5}
+    - name: roybot_idle_horizontal_6
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 384
+        width: 55
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 52.5}
+        - {x: -27.5, y: 45.5}
+        - {x: -27.5, y: -44.5}
+        - {x: -19.5, y: -52.5}
+        - {x: 23.5, y: -52.5}
+        - {x: 27.5, y: -40.5}
+        - {x: 27.5, y: 49.5}
+        - {x: 13.5, y: 52.5}
+    - name: roybot_idle_horizontal_7
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 384
+        width: 54
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 53}
+        - {x: -26, y: 43}
+        - {x: -27, y: 37}
+        - {x: -27, y: -42}
+        - {x: -21, y: -53}
+        - {x: 27, y: -53}
+        - {x: 27, y: 39}
+        - {x: 19, y: 53}
+    - name: roybot_idle_horizontal_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 256
+        width: 53
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 53}
+        - {x: -26.5, y: -47}
+        - {x: -19.5, y: -53}
+        - {x: 26.5, y: -53}
+        - {x: 26.5, y: 37}
+        - {x: 18.5, y: 53}
+    - name: roybot_idle_horizontal_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 256
+        width: 53
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 54}
+        - {x: -26.5, y: 52}
+        - {x: -26.5, y: -43}
+        - {x: -14.5, y: -54}
+        - {x: 26.5, y: -54}
+        - {x: 26.5, y: 50}
+        - {x: 20.5, y: 54}
+    - name: roybot_idle_horizontal_10
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 256
+        width: 53
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 53.5}
+        - {x: -26.5, y: 40.5}
+        - {x: -26.5, y: -24.5}
+        - {x: -17.5, y: -53.5}
+        - {x: 26.5, y: -53.5}
+        - {x: 26.5, y: 52.5}
+        - {x: 23.5, y: 53.5}
+    - name: roybot_idle_horizontal_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 256
+        width: 53
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 54}
+        - {x: -26.5, y: -35}
+        - {x: -14.5, y: -54}
+        - {x: 23.5, y: -54}
+        - {x: 26.5, y: -53}
+        - {x: 26.5, y: 41}
+        - {x: 9.5, y: 54}
+    - name: roybot_idle_horizontal_12
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 256
+        width: 53
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: 54}
+        - {x: -26.5, y: 54}
+        - {x: -26.5, y: -37}
+        - {x: -15.5, y: -54}
+        - {x: 22.5, y: -54}
+        - {x: 26.5, y: -52}
+        - {x: 26.5, y: 22}
+        - {x: 25.5, y: 34}
+    - name: roybot_idle_horizontal_13
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 256
+        width: 56
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -48}
+        - {x: 18, y: -53}
+        - {x: 28, y: -51}
+        - {x: 28, y: 2}
+        - {x: 25, y: 39}
+        - {x: 13, y: 54}
+        - {x: -19, y: 54}
+        - {x: -28, y: 50}
+        - {x: -28, y: -36}
+        - {x: -17, y: -54}
+        - {x: 17, y: -54}
+        - {x: 17, y: -52}
+        - {x: 15, y: -50}
+        - {x: 15, y: -46}
+    - name: roybot_idle_horizontal_14
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 256
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 37.5}
+        - {x: 14, y: 52.5}
+        - {x: -22, y: 52.5}
+        - {x: -28, y: 50.5}
+        - {x: -28, y: -35.5}
+        - {x: -16, y: -52.5}
+        - {x: 21, y: -52.5}
+        - {x: 24, y: -50.5}
+        - {x: 28, y: -48.5}
+        - {x: 28, y: -17.5}
+    - name: roybot_idle_horizontal_15
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 256
+        width: 57
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 52.5}
+        - {x: -25.5, y: 52.5}
+        - {x: -28.5, y: 44.5}
+        - {x: -28.5, y: -48.5}
+        - {x: -21.5, y: -52.5}
+        - {x: 28.5, y: -52.5}
+        - {x: 28.5, y: -22.5}
+        - {x: 24.5, y: 36.5}
+    - name: roybot_idle_horizontal_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 128
+        width: 57
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 52.5}
+        - {x: -27.5, y: 49.5}
+        - {x: -28.5, y: 44.5}
+        - {x: -28.5, y: -30.5}
+        - {x: -18.5, y: -52.5}
+        - {x: 22.5, y: -52.5}
+        - {x: 28.5, y: -51.5}
+        - {x: 28.5, y: 43.5}
+        - {x: 9.5, y: 52.5}
+    - name: roybot_idle_horizontal_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 128
+        width: 56
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 52.5}
+        - {x: -24, y: 52.5}
+        - {x: -28, y: 39.5}
+        - {x: -28, y: -28.5}
+        - {x: -27, y: -30.5}
+        - {x: -16, y: -51.5}
+        - {x: -15, y: -52.5}
+        - {x: 24, y: -52.5}
+        - {x: 28, y: -51.5}
+        - {x: 28, y: 43.5}
+    - name: roybot_idle_horizontal_18
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 128
+        width: 52
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: -52.5}
+        - {x: 26, y: -51.5}
+        - {x: 26, y: 34.5}
+        - {x: 10, y: 52.5}
+        - {x: -19, y: 52.5}
+        - {x: -26, y: 43.5}
+        - {x: -26, y: -36.5}
+        - {x: -17, y: -51.5}
+        - {x: -16, y: -52.5}
+        - {x: 16, y: -52.5}
+        - {x: 16, y: -50.5}
+        - {x: 14, y: -47.5}
+        - {x: 18, y: -52.5}
+    - name: roybot_idle_horizontal_19
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 128
+        width: 53
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 52}
+        - {x: -26.5, y: 41}
+        - {x: -26.5, y: -42}
+        - {x: -23.5, y: -52}
+        - {x: 26.5, y: -52}
+        - {x: 26.5, y: 40}
+        - {x: 13.5, y: 52}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
